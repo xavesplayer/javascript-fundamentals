@@ -91,6 +91,10 @@ hr {
 pre {
     margin-left: 50px;
 }
+#bendito a{
+  display: inline;
+  text-decoration: none;
+}
 ol {
     margin-left: 25px;
 }
