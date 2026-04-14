@@ -1,131 +1,155 @@
+/* RESET */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* BASE */
+body {
+  background-color: #2c2c2c;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
 html {
   scroll-behavior: smooth;
 }
-#home {
-  padding: 5px;
+
+/* ESPAÇAMENTO PADRÃO */
+section {
+  margin: 30px 50px;
 }
+
+h2, h3, h4 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* TÍTULOS */
+h3 {
+  color: rgb(80, 138, 138);
+  font-size: 24px;
+}
+
+h2 {
+  color: #669afa;
+}
+
+h4 {
+  color: #aaa;
+}
+
+/* LISTAS */
+ul {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* CÓDIGO */
+pre {
+  background-color: #1e1e1e;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+code {
+  color: #dcdcdc;
+}
+
+/* IMAGEM */
 #imgDOM {
-  width: 35%; 
-  display:block; 
-  margin:0 auto; 
-  border-radius: 8%; 
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8%;
   padding: 12px;
   border: 5px solid #669afa;
 }
+
+/* BOTÃO TOPO */
 .home_btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
-.home_btn img{
+
+.home_btn img {
   width: 40px;
 }
-hr {
-  margin-right: 50px;
-}
-#hrindice{
-  margin-left: 50px;
-}
-#hrodape {
-  margin-left: 50px
-}
-/* Dropdown Button - trecho copiado de W3Schools */
+
+/* DROPDOWN */
 .dropbtn {
-  margin-left: 40px;
-  margin-bottom: 20px;
+  margin: 20px 50px;
   background-color: #661f1fa1;
   color: white;
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
   border: 1px solid black;
   cursor: pointer;
-  border-radius: 29%;
+  border-radius: 8px;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover {
   background-color: #300505;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  margin-left: 35px;
   display: none;
-  margin-top: -20px;
   position: absolute;
-  background-color: rgba(59, 59, 59, 0.9);
-  border-radius: 2.5%;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px #0e0e0e;
-  z-index: 1;
+  margin-left: 50px;
+  background-color: rgba(59, 59, 59, 0.95);
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px #000;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-  color: rgb(255, 255, 255);
+  display: block;
   padding: 8px 12px;
+  color: white;
   text-decoration: none;
-  display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #300505;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5%;
+  background-color: #300505;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
-pre {
-    margin-left: 50px;
+.show {
+  display: block;
 }
-#bendito a{
-  display: inline;
+
+/* LINKS (IMPORTANTE) */
+a {
+  color: #8ab4f8;
   text-decoration: none;
 }
-ol {
-    margin-left: 25px;
-}
-ol a {
-    text-decoration: none;
-}
-ol {
-    padding: 30px;
-}
-body {
-    background-color: #2c2c2c;
-    color: rgba(255, 255, 255, 0.699);
-  }
-h3 {
-    margin-left: 49px;
-    font-size: 25px;
-    color:rgb(80, 138, 138)}
 
-article h2, p {
-  text-align: center; 
-  color: #669afa
+a:hover {
+  text-decoration: underline;
 }
 
-#condic, h1 {
-  text-align: center;
-  padding: 15px;
-  color: #249624
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
-footer a img{
+footer img {
   width: 30px;
-  display: block;
-  margin: 12px;
+  margin: 10px;
 }

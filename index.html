@@ -1,262 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="NotaStyle.css">
-    <title>Anotações JS</title>
-  </head>
-  <body>
-  <div id="home"></div>
-  <a href="#home" class="home_btn" id="topBtn">
-    <img src="/img/botao.png" alt="Home" title="Voltar ao topo"></a>
-  <h2
-    style="margin-left: 40px; margin-top: 40px; color:rgb(252, 252, 252)"
-    >
-    </h2>
-    <!--Bookmarks-->
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Índice</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#Proc">Precedência de operadores aritméticos</a>
-        <a href="#Atri">Operadores de Atribuição</a>
-        <a href="#Incre">Operadores de Incremento</a>
-        <a href="#Rela">Operadores Relacionais</a>
-        <a href="#Logi">Operadores Lógicos</a>
-        <a href="#Tern">Operadores Ternários</a>
-        <a href="#DOM">DOM</a>
-        <a href="#EVT">Eventos DOM</a>
-        <a href="#FUNC">Funções</a>
-        <a href="#COND">Condições</a>
-      </div>
-    </div>
-    <hr id="hrindice">
-    <br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="NotaStyle.css">
+  <title>Anotações JS</title>
+</head>
+
+<body>
+
+<div id="home"></div>
+
+<a href="#home" class="home_btn" id="topBtn">
+  <img src="/img/botao.png" alt="Home" title="Voltar ao topo">
+</a>
+
+<!-- ÍNDICE -->
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Índice</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#Proc">Precedência</a>
+    <a href="#Atri">Atribuição</a>
+    <a href="#Incre">Incremento</a>
+    <a href="#Rela">Relacionais</a>
+    <a href="#Logi">Lógicos</a>
+    <a href="#Tern">Ternário</a>
+    <a href="#DOM">DOM</a>
+    <a href="#EVT">Eventos</a>
+    <a href="#FUNC">Funções</a>
+    <a href="#COND">Condições</a>
+  </div>
+</div>
+
+<hr id="hrindice">
+
+<!-- PRECEDÊNCIA -->
+<section>
 <h3 id="Proc">Precedência de operadores</h3>
-<pre>
-      
-Primeiro operadores aritméticos
-Depois operadores relacionais
-Por último operadores lógicos
 
-----------------------------------------------
- 
-1º ()
+<ul>
+  <li>1º ()</li>
+  <li>2º **</li>
+  <li>3º * / %</li>
+  <li>4º + -</li>
+  <li>Relacionais: sem ordem definida</li>
+  <li>! → && → ||</li>
+</ul>
+</section>
 
-2º **
+<!-- ATRIBUIÇÃO -->
+<section>
+<h3 id="Atri">Operadores de Atribuição</h3>
 
-3º's  *  /  %
-
-4º's  + -
-
-----------------------------------------------
-
-5º *Relacionais não tem ordem de precedência
-
-----------------------------------------------
-
-6º !
-
-7º &&
-
-8º ||
-
-----------------------------------------------
-
-<hr>
-
-</pre>
-    <h3 id="Atri"> Operadores de Atribuição </h3>
-    <pre>
-
-(Quando uma var recebe ela mesma)
+<pre><code>
 var n = 3
-n = n + 4   ou   n += 4
-n = n - 5   ou   n -= 5
-n = n * 4   ou   n *= 4
-n = n / 2   ou   n /= 2
-n = n ** 2  ou   n **= 2 
-n = n % 5   ou   n %= 5
+n += 4
+n -= 5
+n *= 4
+n /= 2
+n **= 2
+n %= 5
+</code></pre>
 
-<hr>
+</section>
 
-</pre>
-    <h3 id="Incre"> Operadores de Incremento </h3>
-<pre>
+<!-- INCREMENTO -->
+<section>
+<h3 id="Incre">Operadores de Incremento</h3>
 
-var x = 5   Pre-incremento   Pós-incremento
-x = x + 1   ++x              x++
-x = x - 1   --x              x--
+<pre><code>
+var x = 5
+++x   // pré
+x++   // pós
+--x
+x--
+</code></pre>
 
-<hr>
+</section>
 
-</pre>
-    <h3 id="Rela"> Operadores Relacionais</h3>
-      <pre>
+<!-- RELACIONAIS -->
+<section>
+<h3 id="Rela">Operadores Relacionais</h3>
 
-5 > 2  -> true (cinco maior que dois)
-7 < 4  -> false (sete menor que quatro)
-8 >= 8 -> true  (oito maior ou igual a oito)
-9 <= 7 -> false (nove menor ou igual a sete)
-4 != 4 -> false (quatro diferente de quatro)
-5 == 5 -> true  (cinco igual a cinco)
-5 == '5' -> true (cinco[int] igual a cinco[string])
-5 === '5' -> false (cinco[int] idêntico a cinco[string])
-5 !== '5' -> true (cinco[int] desigual restrito a cinco[string])
+<ul>
+  <li>5 > 2 → true</li>
+  <li>7 < 4 → false</li>
+  <li>8 >= 8 → true</li>
+  <li>5 == '5' → true</li>
+  <li>5 === '5' → false</li>
+</ul>
 
+<p>Use <strong>===</strong> para evitar problemas de tipo.</p>
 
-Obs: O resultado de saída será sempre um valor booleano
-Não testa tipos primitivos com == (igualdade)
-Testa tipos primitivos com === (Operador de igualdade restrita / Identidade)
+</section>
 
-<hr>
-</pre>
-
+<!-- LÓGICOS -->
+<section>
 <h3 id="Logi">Operadores Lógicos</h3>
-<pre>
 
-! Negação (Não)
-!true -> false
-!false -> true
-
-&& Conjunção (E)
-true && true -> true
-true && false -> false
-false && true -> false
-false && false -> false
-
-|| Disjunção (Ou) (um ou outro, ou os dois, mas não nenhum)
-
-true  || true  -> true
-true  || false -> true
-false || true  -> true
-false || false -> false
-
-ex:
-idade >= 15 && idade <= 17 // a idade está entre 15 e 17?
-estado == 'RJ' || estado == 'SP' // o estado é RJ ou SP?
-salário > 1500 && sexo != 'M' // mulher que ganha mais de 1500?
-
-<hr>
-
-</pre>
-<h3 id="Tern">Operadores Ternários</h3>
-<pre>
-  
-(três operandos)
-
-?
-:
-(teste ? true : false)
-ex:
-média >= 7.0 ? "Aprovado" : "Reprovado"
-
-fazendo uma analogia às condições 
-? (If) 
-: (Else)
-
-<hr> 
-
-</pre>
-<article>
-<h2 id="DOM">DOM</h2><br>
-<p>(Document Object Model)</p>
-<p>"Facilitador de acesso ao HTML pelo JS"</p><br>
-<img id="imgDOM" src="img/DOM.webp" alt="Árvore DOM"><br>
-<p>Créditos da imagem: Marcos Dantas, DIO</p>
-<pre>
-  
-<hr>
-Seletores
 <ul>
-  <li>Marca</li>
-getElementsByTagName() []
-ex:
-var p1 = window.getElementsByTagName('p') [0] * Pega o primeiro parágrafo, utilizamos índice porque o código buscará por todos os elementos (Elements).
-window.document.write(p.innerText) * Texto do parágrafo
-obs1: write não funciona com o script em head utilizando o método defer (para carregamento posterior ao html), pode ser trocado por window.alert(p.innerText), obviamente, não com o mesmo efeito.
-obs2: innerText mostrará apenas a tag pai, se houverem outras tags, de formatação de estilo por exemplo, não serão mostradas, ao contrário de innerHtml.
-  <li>ID</li>
-getElementById()
-  <li>Nome</li>
-getElementsByName() []
-  <li>Classe</li>
-getElementsByClassName() []
-  <li>Seletor</li>
-(Boa prática)
-querySelector()
-querySelectorAll()
-ex: var d = document.querySelector('div#msg')
+  <li>! → negação</li>
+  <li>&& → e</li>
+  <li>|| → ou</li>
+</ul>
+
+<pre><code>
+idade >= 15 && idade <= 17
+estado == 'RJ' || estado == 'SP'
+</code></pre>
+
+</section>
+
+<!-- TERNÁRIO -->
+<section>
+<h3 id="Tern">Operador Ternário</h3>
+
+<pre><code>
+média >= 7 ? "Aprovado" : "Reprovado"
+</code></pre>
+
+</section>
+
+<!-- DOM -->
+<section>
+<h2 id="DOM">DOM</h2>
+
+<p>Document Object Model</p>
+<p>Facilita o acesso ao HTML pelo JavaScript</p>
+
+<img id="imgDOM" src="img/DOM.webp" alt="Árvore DOM">
+
+<h4>Seletores</h4>
+
+<ul>
+  <li>getElementById()</li>
+  <li>getElementsByClassName()</li>
+  <li>getElementsByTagName()</li>
+  <li>querySelector()</li>
+</ul>
+
+<pre><code>
+var d = document.querySelector('#msg')
 d.style.color = 'blue'
-# pois estamos utilizando um Id.
-</ul>
-<br>
-<hr>
+</code></pre>
+
+</section>
+
+<!-- EVENTOS -->
+<section>
 <h2 id="EVT">Eventos DOM</h2>
-Evento é tudo o que pode acontecer com o elemento selecionado.
 
-exs:
 <ul>
-<li>mouseenter (quando o mouse está dentro do elemento)</li>
-<li>mousemove (quando o mesmo se move dentro do elemento)</li>
-<li>mousedown (quando se clica [e segura])</li>
-<li>mouseup  (quando é solto o clique)</li>
-<li>click (click "inteiro")</li>
-<li>mouseout (quando o mouse sai do elemento)</li>
+  <li>click</li>
+  <li>mouseenter</li>
+  <li>mouseout</li>
 </ul>
-</pre>
-<p id="bendito">
-Mais eventos clique<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events" target="_blank" alt="link para referências de eventos DOM do MDN">aqui</a>
+
+<p>
+Mais eventos clique 
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events" target="_blank">
+aqui
+</a>
 </p>
-<pre>
 
-<hr>
-<h2 id="FUNC">Funções (de evento)</h2>
-function ação(parâmetros){
+</section>
 
-}
+<!-- FUNÇÕES -->
+<section>
+<h2 id="FUNC">Funções</h2>
 
-Exemplo em html: 
-
-    <span style="color : #d11717">&lt;div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()"&gt; <!--metódo "on" é usado para disparar um evento dentro do html-->
-        interaja...
-    &lt;/div&gt;</span>
-
-No script: 
-
-    <span style="color : #d11717">
-var a = window.document.getElementById('area') <span style="color: rgb(65, 65, 65)">*Escopo global</span>
-
+<pre><code>
 function clicar() {
-  a.innerText = 'Clicou!'
-  a.style.background = 'red'
+  area.innerText = 'Clicou!'
 }
-function entrou() {
-  a.innerText = 'Entrou!'
-}
-function saiu() {
-  a.innerText ='Saiu!'
-  a.style.background = 'green'
-}</span>
+</code></pre>
 
-Direto no script:
+</section>
 
-var a = window.document.getElementById('area')
-a.addEventListener('click', clicar)
-a.addEventListener('mouseenter', entrou)
-a.addEventListener('mouseout', saiu)
+<!-- CONDIÇÕES -->
+<section>
+<h2 id="COND">Condições</h2>
+</section>
 
-<hr>
-</article>
-<article id="condic">
-<h1 id="COND">Condições</h1>
-</article>
-</pre>
-<script src="script.js"></script>
-</body>
-<hr id="hrodape">
+<!-- FOOTER -->
 <footer>
-  <a href="https://github.com/xavesplayer" target="_blank" title="Github"><img src="/img/Github.png"></a>
-  <a href="https://www.linkedin.com/in/jefferson-pereira-salvador-013583142/" target="_blank" title="LinkedIn"><img src="/img/LinkedIn.png"></a>
+  <a href="https://github.com/xavesplayer" target="_blank">
+    <img src="/img/Github.png">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank">
+    <img src="/img/LinkedIn.png">
+  </a>
 </footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
