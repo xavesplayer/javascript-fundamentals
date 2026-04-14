@@ -17,11 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ESPAÇAMENTO PADRÃO */
-section {
-  margin: 30px 50px;
-}
-
 hr {
   margin: 20px 50px;
   border: none;
@@ -73,7 +68,9 @@ pre {
   border-radius: 6px;
   overflow-x: auto;
   margin: 10px 0;
+  border-left: 3px solid #669afa; /* ADICIONA ISSO */
 }
+
 
 code {
   color: #dcdcdc;
@@ -126,12 +123,12 @@ h2#DOM{
 
 .dropdown {
   position: relative;
+  margin-left: 50px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  margin-left: 50px;
   background-color: rgba(59, 59, 59, 0.95);
   min-width: 180px;
   border-radius: 6px;
@@ -168,6 +165,7 @@ footer {
   margin-top: 40px;
   display: flex;
   justify-content: center;
+  align-items: center; /* adiciona */
 }
 
 footer img {
