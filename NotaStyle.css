@@ -11,44 +11,51 @@ body {
   color: #e4e4e4;
   font-family: Arial, sans-serif;
   line-height: 1.5;
+  padding-top: 70px; /* espaço pro índice fixo */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-hr {
-  margin: 20px 50px;
-  border: none;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+/* LAYOUT */
+section {
+  margin: 30px auto;
+  max-width: 900px;
 }
 
+hr {
+  margin: 20px auto;
+  max-width: 900px;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #669afa, transparent);
+}
+
+/* TÍTULOS */
 h2, h3, h4 {
   margin-bottom: 10px;
 }
 
+h2 {
+  color: #669afa;
+  text-align: center;
+}
+
 h3 {
+  color: rgb(80, 138, 138);
+  font-size: 24px;
   border-left: 4px solid #669afa;
   padding-left: 10px;
 }
 
-p {
-  margin-bottom: 10px;
-}
-
-/* TÍTULOS */
-h3 {
-  color: rgb(80, 138, 138);
-  font-size: 24px;
-}
-
-h2 {
-  color: #669afa;
-}
-
 h4 {
   color: #aaa;
+}
+
+/* TEXTO */
+p {
+  margin-bottom: 10px;
 }
 
 /* LISTAS */
@@ -68,21 +75,25 @@ pre {
   border-radius: 6px;
   overflow-x: auto;
   margin: 10px 0;
-  border-left: 3px solid #669afa; /* ADICIONA ISSO */
+  border-left: 3px solid #669afa;
 }
-
 
 code {
   color: #dcdcdc;
 }
 
-section {
-  margin: 30px auto;
-  max-width: 900px;
+/* OBSERVAÇÕES */
+.obs {
+  background-color: rgba(255, 255, 0, 0.08);
+  border-left: 4px solid #f1c40f;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-h2#DOM{
-  text-align: center;
+.obs::before {
+  content: "⚠️ ";
 }
 
 /* IMAGEM */
@@ -106,9 +117,15 @@ h2#DOM{
   width: 40px;
 }
 
-/* DROPDOWN */
+/* ÍNDICE (DROPDOWN FIXO) */
+.dropdown {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
 .dropbtn {
-  margin: 20px 50px;
   background-color: #661f1fa1;
   color: white;
   padding: 10px;
@@ -121,14 +138,11 @@ h2#DOM{
   background-color: #300505;
 }
 
-.dropdown {
-  position: relative;
-  margin-left: 50px;
-}
-
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 50px;
+  left: 0;
   background-color: rgba(59, 59, 59, 0.95);
   min-width: 180px;
   border-radius: 6px;
@@ -150,7 +164,7 @@ h2#DOM{
   display: block;
 }
 
-/* LINKS (IMPORTANTE) */
+/* LINKS */
 a {
   color: #8ab4f8;
   text-decoration: none;
@@ -165,10 +179,62 @@ footer {
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: center; /* adiciona */
+  align-items: center;
 }
 
 footer img {
   width: 30px;
   margin: 10px;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVIDADE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 80px;
+  }
+
+  section {
+    margin: 20px;
+    max-width: 100%;
+  }
+
+  hr {
+    margin: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  pre {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .dropdown {
+    top: 10px;
+    left: 10px;
+  }
+
+  .dropbtn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .dropdown-content {
+    min-width: 140px;
+  }
+
+  .home_btn img {
+    width: 30px;
+  }
+
 }

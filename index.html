@@ -43,10 +43,11 @@
   <li>2º **</li>
   <li>3º * / %</li>
   <li>4º + -</li>
-  <li>Relacionais: sem ordem definida</li>
-  <li>! → && → ||</li>
+  <li>Relacionais: não possuem ordem definida</li>
+  <li>Ordem lógica: ! → && → ||</li>
 </ul>
 </section>
+
 <hr>
 
 <!-- ATRIBUIÇÃO -->
@@ -55,15 +56,16 @@
 
 <pre><code>
 var n = 3
-n += 4
-n -= 5
-n *= 4
-n /= 2
-n **= 2
-n %= 5
+n = n + 4   // ou n += 4
+n = n - 5   // ou n -= 5
+n = n * 4   // ou n *= 4
+n = n / 2   // ou n /= 2
+n = n ** 2  // ou n **= 2
+n = n % 5   // ou n %= 5
 </code></pre>
 
 </section>
+
 <hr>
 
 <!-- INCREMENTO -->
@@ -72,13 +74,16 @@ n %= 5
 
 <pre><code>
 var x = 5
-++x   // pré
-x++   // pós
+
+++x   // pré-incremento
+x++   // pós-incremento
+
 --x
 x--
 </code></pre>
 
 </section>
+
 <hr>
 
 <!-- RELACIONAIS -->
@@ -89,13 +94,23 @@ x--
   <li>5 > 2 → true</li>
   <li>7 < 4 → false</li>
   <li>8 >= 8 → true</li>
+  <li>9 <= 7 → false</li>
+  <li>4 != 4 → false</li>
   <li>5 == '5' → true</li>
   <li>5 === '5' → false</li>
+  <li>5 !== '5' → true</li>
 </ul>
 
-<p>Use <strong>===</strong> para evitar problemas de tipo.</p>
+<div class="obs">
+  O resultado sempre será booleano.
+</div>
+
+<div class="obs">
+  Evite usar <strong>==</strong>. Prefira <strong>===</strong> para comparar tipo e valor.
+</div>
 
 </section>
+
 <hr>
 
 <!-- LÓGICOS -->
@@ -103,17 +118,19 @@ x--
 <h3 id="Logi">Operadores Lógicos</h3>
 
 <ul>
-  <li>! → negação</li>
-  <li>&& → e</li>
-  <li>|| → ou</li>
+  <li><strong>!</strong> → negação</li>
+  <li><strong>&&</strong> → e</li>
+  <li><strong>||</strong> → ou</li>
 </ul>
 
 <pre><code>
 idade >= 15 && idade <= 17
 estado == 'RJ' || estado == 'SP'
+salario > 1500 && sexo != 'M'
 </code></pre>
 
 </section>
+
 <hr>
 
 <!-- TERNÁRIO -->
@@ -121,46 +138,74 @@ estado == 'RJ' || estado == 'SP'
 <h3 id="Tern">Operador Ternário</h3>
 
 <pre><code>
-média >= 7 ? "Aprovado" : "Reprovado"
+media >= 7 ? "Aprovado" : "Reprovado"
 </code></pre>
 
+<div class="obs">
+  ? funciona como if e : como else.
+</div>
+
 </section>
+
 <hr>
 
 <!-- DOM -->
 <section>
 <h2 id="DOM">DOM</h2>
 
-<p>Document Object Model</p>
-<p>Facilita o acesso ao HTML pelo JavaScript</p>
+<p><strong>Document Object Model</strong></p>
+<p>Facilita o acesso ao HTML usando JavaScript.</p>
 
 <img id="imgDOM" src="img/DOM.webp" alt="Árvore DOM">
+
 <hr>
 
 <h4>Seletores</h4>
 
 <ul>
-  <li>getElementById()</li>
-  <li>getElementsByClassName()</li>
   <li>getElementsByTagName()</li>
+  <li>getElementById()</li>
+  <li>getElementsByName()</li>
+  <li>getElementsByClassName()</li>
   <li>querySelector()</li>
+  <li>querySelectorAll()</li>
 </ul>
 
 <pre><code>
+var p1 = document.getElementsByTagName('p')[0]
 var d = document.querySelector('#msg')
+
 d.style.color = 'blue'
 </code></pre>
 
+<div class="obs">
+  getElementsByTagName retorna vários elementos, por isso usamos índice [0].
+</div>
+
+<div class="obs">
+  innerText mostra só o texto. innerHTML inclui tags internas.
+</div>
+
+<div class="obs">
+  document.write não funciona bem com defer.
+</div>
+
 </section>
+
 <hr>
 
 <!-- EVENTOS -->
 <section>
 <h2 id="EVT">Eventos DOM</h2>
 
+<p>Evento é qualquer interação com um elemento.</p>
+
 <ul>
-  <li>click</li>
   <li>mouseenter</li>
+  <li>mousemove</li>
+  <li>mousedown</li>
+  <li>mouseup</li>
+  <li>click</li>
   <li>mouseout</li>
 </ul>
 
@@ -172,6 +217,7 @@ aqui
 </p>
 
 </section>
+
 <hr>
 
 <!-- FUNÇÕES -->
@@ -181,25 +227,32 @@ aqui
 <pre><code>
 function clicar() {
   area.innerText = 'Clicou!'
+  area.style.background = 'red'
 }
 </code></pre>
 
+<div class="obs">
+  Eventos podem ser adicionados direto no HTML ou via addEventListener.
+</div>
+
 </section>
+
 <hr>
 
 <!-- CONDIÇÕES -->
 <section>
 <h2 id="COND">Condições</h2>
 </section>
+
 <hr>
 
 <!-- FOOTER -->
 <footer>
   <a href="https://github.com/xavesplayer" target="_blank">
-    <img src="/img/Github.png">
+    <img src="/img/Github.png" alt="Github">
   </a>
   <a href="https://www.linkedin.com" target="_blank">
-    <img src="/img/LinkedIn.png">
+    <img src="/img/LinkedIn.png" alt="LinkedIn">
   </a>
 </footer>
 
