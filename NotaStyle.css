@@ -6,6 +6,17 @@
 html {
   scroll-behavior: smooth;
 }
+#home {
+  padding: 5px;
+}
+#imgDOM {
+  width: 35%; 
+  display:block; 
+  margin:0 auto; 
+  border-radius: 8%; 
+  padding: 12px;
+  border: 5px solid #669afa;
+}
 .home_btn {
   position: fixed;
   bottom: 20px;
@@ -97,7 +108,7 @@ h3 {
 
 article h2, p {
   text-align: center; 
-  color: rgb(102, 154, 250)
+  color: #669afa
 }
 footer a img{
   width: 30px;

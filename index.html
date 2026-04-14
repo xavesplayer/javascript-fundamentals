@@ -156,16 +156,34 @@ fazendo uma analogia às condições
 
 </pre>
 <article>
-<h2 id="DOM">DOM</h2>
-<p>(Document Object Model)</p>
+<h2 id="DOM">DOM</h2><br>
+<p>(Document Object Model)</p><br>
+<img id="imgDOM" src="img/DOM.webp" alt="Árvore DOM"><br>
+<p>Créditos da imagem: Marcos Dantas, DIO</p>
 <pre>
 
 Seletores
 <ul>
   <li>Marca</li>
-getElementByTagName()
-ex: windows.document.getElementByTagName('p') [0] *Pega o primeiro parágrafo
-  <li></li>
+getElementsByTagName() []
+ex:
+var p1 = window.getElementsByTagName('p') [0] * Pega o primeiro parágrafo, utilizamos índice porque o código buscará por todos os elementos (Elements).
+window.document.write(p.innerText) * Texto do parágrafo
+obs1: write não funciona com o script em head utilizando o método defer (para carregamento posterior ao html), pode ser trocado por window.alert(p.innerText)
+obs2: innerText mostrará apenas a tag pai, se houverem outras tags, de formatação de estilo por exemplo, não serão mostradas, ao contrário de innerHtml.
+  <li>ID</li>
+getElementById()
+  <li>Nome</li>
+getElementsByName() []
+  <li>Classe</li>
+getElementsByClassName() []
+  <li>Seletor</li>
+(Boa prática)
+querySelector()
+querySelectorAll()
+ex: var d = document.querySelector('div#msg')
+d.style.color = 'blue'
+# pois estamos utilizando um Id.
 </ul>
   
 </pre>
