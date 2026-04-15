@@ -38,12 +38,12 @@ h2, h3, h4 {
 }
 
 h2 {
-  color: #155c85;
+  color: #669afa;
   text-align: center;
 }
 
 h3 {
-  color: rgba(177, 81, 17, 0.788);
+  color: #7fb3ff;
   background: linear-gradient(to right, #1e3d75bd, transparent, transparent);
   font-size: 24px;
   border-left: 4px solid #669afa;
@@ -132,15 +132,20 @@ code {
 }
 /* BOTÃO COPIAR */
 .copybtn {
-  top: 10px;
-  right: 10px;
-  background-color: #661f1fa1;
+  background-color:#2f4f88;;
   color: white;
   padding: 5px 8px;
   border: none;
   cursor: pointer;
   border-radius: 6px;
   font-size: 12px;
+}
+.copybtn:hover {
+  background-color: #3b73d1;;
+}
+
+.copybtn:active {
+  transform: scale(0.95);
 }
 
 /* ÍNDICE (DROPDOWN FIXO) */
@@ -152,7 +157,7 @@ code {
 }
 
 .dropbtn {
-  background-color: #661f1fa1;
+  background-color: #2f4f88;
   color: white;
   padding: 10px;
   border: 1px solid black;
