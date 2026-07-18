@@ -31,6 +31,9 @@
     <a href="#EVT">Eventos</a>
     <a href="#FUNC">Funções</a>
     <a href="#COND">Condições</a>
+    <a href="#REPET">Repetição</a>
+    <a href="#ARRA">Arrays/Vetores</a>
+    <a href="#FUNC2">Avançando em funções</a>
   </div>
 </div>
 
@@ -332,8 +335,110 @@ switch (diaSem){
   O break é necessário (obrigatório) para evitar que o código continue executando os próximos cases.
 </div>
 <div class="obs">
-O switch só aceita números inteiros, strings ou booleanos. Não funciona com intervalos. Fazendo-o ser um pouco mais limitado que o if-else.
+  O switch só aceita números inteiros, strings ou booleanos. Não funciona com intervalos. Fazendo-o ser um pouco mais limitado que o if-else.
+</div>
 
+</section>
+<section>
+  <h3 id="REPET">Estruturas de Repetição</h3>
+  <ul>
+    <li id="for1">for</li>
+    <li id="while1">while</li>
+    <li id="dowhile1">do while</li>
+  </ul>
+  <p>For:</p>
+  <pre class="language-javascript" id="cop10"><code class="language-javascript">
+  for (var c = 1; c <= 5; c++) {
+    console.log(c)
+  }
+  for (inicio; condição; incremento) {
+    // código
+  }
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop10', this)">Copiar</button>
+  <div class="obs">
+    O for é mais usado quando se sabe o número de repetições. O while é mais usado quando não se sabe o número de repetições.
+  </div>
+  <p>While:</p>
+  <pre class="language-javascript" id="cop11"><code class="language-javascript">
+    var c = 1
+    while (c <= 5) {
+      console.log(c)
+      c++
+    } 
+  </code></pre>
+  <div class="obs">
+    O while é mais usado quando não se sabe o número de repetições. O for é mais usado quando se sabe o número de repetições.
+  </div>
+  <button class="copybtn" onclick="copiar('cop11', this)">Copiar</button>
+  <p>Do While:</p>
+  <pre class="language-javascript" id="cop12"><code class="language-javascript">
+    var c = 1
+    do {
+      console.log(c)
+      c++
+    } while (c <= 5)
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop12', this)">Copiar</button>
+  <div class="obs">
+    O do while é usado quando se quer que o código seja executado pelo menos uma vez, mesmo que a condição seja falsa.
+  </div>
+</section>
+<section>
+  <h3 id="ARRA">Arrays/Vetores</h3>
+  <ul>
+    <li>Variáveis Simples</li>
+      <ul>
+      <li>Só armazenam um valor por vez</li>
+      </ul>
+      <li>Variáveis Compostas / Arrays / Vetores</li>
+      <ul>
+      <li>São capazes de armazenar vários valores em uma mesma estrutura</li>
+    </ul>
+    <quote>"Um array ou um vetor, ou uma variável composta é uma variável que tem vários elementos. Cada elemente é composto pelo seu valor e por uma chave de identificação."</quote>
+    <p class="autor">Gustavo Guanabara</p>
+  </ul>
+  <pre class="language-javascript" id="cop13"><code class="language-javascript">
+Exemplos de manipulação de arrays:
+
+let num = [5, 8, 2, 9, 3]
+// //Adicionar elemento há um índice conhecido
+num[5] = 9
+// //Adicionar elemento e índice após o último elemento do vetor
+num.push(1)
+// //tamanho da array
+num.length
+// agrupa em ordem crescente
+num.sort()
+console.log(num)
+console.log(`Nosso vetor tem ${num.length} elementos`)
+console.log(num[0])
+
+let valores = [8, 1, 7, 4, 2, 9]
+// //percurso para exibição
+for (let pos = 0; pos &lt;= valores.length; pos++) {
+  console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
+}
+// para cada posição em "num" mostre o elemento dessa posição (.sort() para ordenar)
+num = [4, 9, 6, 5, 1].sort()
+for (let pos in num) {
+  console.log(`A posição ${pos} tem o valor ${num[pos]}`)
+}
+// busca o índice (se o valor não for encontrado retorna -1)
+num.indexOf(7)
+</code></pre>
+<button class="copybtn" onclick="copiar('cop13', this)">Copiar</button>
+<div class="obs">
+  Funções podem ser declaradas de várias formas, como funções nomeadas, funções anônimas, funções de seta (arrow functions) e funções de expressão.
+</div>
+</section>
+<section>
+  <h3 id="FUNC2">Avançando em funções</h3>
+  <p></p>
+  <pre class="language-javascript" id="cop14"><code class="language-javascript">
+
+  </code>
+  </pre>
 </section>
 
 <hr>

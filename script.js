@@ -19,18 +19,49 @@ window.onclick = function(event) {
 }
 /*meu código (utilizando IA para estudos)*/
 function copiar(id, botao) {
-  const texto = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(texto)
-    .then(() => {
-      botao.innerText = "Copiado ✓";
-      setTimeout(() => {
-        botao.innerText = "Copiar";
-      }, 1500);
-    })
-    .catch(err => {
-      botao.innerText = "Erro ao copiar";
-      setTimeout(() => {
-        botao.innerText = "Copiar";
-      }, 1500);
-    });
+  const elemento = document.getElementById(id);
+  const texto = elemento?.textContent?.trim() || '';
+
+  const sucesso = () => {
+    botao.innerText = 'Copiado ✓';
+    setTimeout(() => {
+      botao.innerText = 'Copiar';
+    }, 1500);
+  };
+
+  const falha = () => {
+    botao.innerText = 'Erro ao copiar';
+    setTimeout(() => {
+      botao.innerText = 'Copiar';
+    }, 1500);
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto)
+      .then(sucesso)
+      .catch(() => {
+        fallbackCopy(texto, sucesso, falha);
+      });
+  } else {
+    fallbackCopy(texto, sucesso, falha);
+  }
+}
+
+function fallbackCopy(texto, sucesso, falha) {
+  const tempInput = document.createElement('textarea');
+  tempInput.value = texto;
+  tempInput.setAttribute('readonly', '');
+  tempInput.style.position = 'fixed';
+  tempInput.style.left = '-9999px';
+  document.body.appendChild(tempInput);
+  tempInput.select();
+
+  try {
+    document.execCommand('copy');
+    sucesso();
+  } catch (error) {
+    falha();
+  } finally {
+    document.body.removeChild(tempInput);
+  }
 }
