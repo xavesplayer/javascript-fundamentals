@@ -339,6 +339,7 @@ switch (diaSem){
 </div>
 
 </section>
+<hr>
 <section>
   <h3 id="REPET">Estruturas de Repetição</h3>
   <ul>
@@ -384,6 +385,7 @@ switch (diaSem){
     O do while é usado quando se quer que o código seja executado pelo menos uma vez, mesmo que a condição seja falsa.
   </div>
 </section>
+<hr>
 <section>
   <h3 id="ARRA">Arrays/Vetores</h3>
   <ul>
@@ -432,15 +434,125 @@ num.indexOf(7)
   Funções podem ser declaradas de várias formas, como funções nomeadas, funções anônimas, funções de seta (arrow functions) e funções de expressão.
 </div>
 </section>
+<hr>
 <section>
   <h3 id="FUNC2">Avançando em funções</h3>
-  <p></p>
+  <p>São ações executadas assim que são chamadas ou em decorrência de um evento.</p>
+  <p>Uma função pode receber parâmetros e retornar um resultado.</p>
+
+  <h4>Função com parâmetros e retorno</h4>
   <pre class="language-javascript" id="cop14"><code class="language-javascript">
+Síntaxe básica de uma função com parâmetros e retorno de valor:
 
-  </code>
-  </pre>
+function ação(parâmetro){
+  //código
+  return resultado
+}
+ação(5)
+Ex:
+
+function parimp(n){
+  if (n % 2 == 0){
+    return 'par'
+  } else {
+    return 'ímpar'
+  }
+}
+// ⚠ chamada da função ⚠
+let res = parimp(11)
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop14', this)">Copiar</button>
+  <div class="obs">
+    A função acima mostra a estrutura básica de uma função com parâmetros e retorno de valor.
+  </div>
+  <hr>
+
+  <h4>Função que verifica par ou ímpar</h4>
+  <pre class="language-javascript" id="cop15"><code class="language-javascript">
+function parimpar(n){
+  if(n%2==0){
+    return `Par`
+  } else {
+    return `Impar`
+  }
+}
+let res = parimpar(4)
+console.log(res)
+//ou console.log(parimpar(4))
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop15', this)">Copiar</button>
+  <div class="obs">
+    A função acima recebe um parâmetro (n) e retorna um resultado (par ou ímpar). O resultado é armazenado na variável res.
+  </div>
+  <hr>
+
+  <h4>Função com parâmetros padrão</h4>
+  <pre class="language-javascript" id="cop16"><code class="language-javascript">
+//parâmetros pré definidos:
+// function soma(n1=0, n2=0){...} n1=0, n2=0 <== define um valor padrão
+function soma(n1, n2){
+  return n1+n2
+}
+
+console.log(soma(2))
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop16', this)">Copiar</button>
+  <div class="obs">
+    A função acima recebe dois parâmetros (n1 e n2) e retorna a soma dos dois. Se apenas um parâmetro for passado, o outro será undefined, resultando em NaN (Not a Number). Para evitar isso, podemos definir valores padrão para os parâmetros.
+  </div>
+  <hr>
+
+  <h4>Função anônima atribuída a variável</h4>
+  <pre class="language-javascript" id="cop17"><code class="language-javascript">
+let v = function(x){
+  return x*2
+}
+
+console.log(v(5))
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop17', this)">Copiar</button>
+  <div class="obs">
+    A função acima recebe um parâmetro (x) e retorna o dobro desse valor.
+  </div>
+  <hr>
+
+  <h4>Função fatorial com loop</h4>
+  <pre class="language-javascript" id="cop18"><code class="language-javascript">
+function fatorial(n){
+  let fat = 1
+  for (let c = n; c > 1; c--){
+    fat *= c
+  }
+  return fat
+}
+
+console.log(fatorial(5))
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop18', this)">Copiar</button>
+  <div class="obs">
+    A função acima recebe um parâmetro (n) e retorna o fatorial desse valor. O fatorial de um número n é o produto de todos os números inteiros positivos de 1 até n. Por exemplo, 5! = 5 x 4 x 3 x 2 x 1 = 120.
+  </div>
+  <hr>
+
+  <h4>Função fatorial recursiva</h4>
+  <pre class="language-javascript" id="cop19"><code class="language-javascript">
+// Recursividade
+function fatorial(n){
+  if (n == 1){
+    return 1
+  } else {
+    return n * fatorial(n-1)
+  }
+}
+console.log(fatorial(5))
+//n! = n x (n-1)!
+  </code></pre>
+  <button class="copybtn" onclick="copiar('cop19', this)">Copiar</button>
+  <div class="obs">
+    A função acima utiliza recursividade para calcular o fatorial de um número. Recursividade é uma técnica em que uma função chama a si mesma até atingir um caso base.
+  </div>
+  <hr>
 </section>
-
 <hr>
 
 <!-- FOOTER -->

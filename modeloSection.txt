@@ -1,0 +1,23 @@
+<section>
+  <h3 id=""></h3>
+  <p></p>
+  <pre class="language-javascript" id="cop"><code class="language-javascript">
+  <div class="obs">
+
+  </div>
+  </code>
+  </pre>
+</section>
+-------------------------------------------------------------------------------
+<pre class="language-javascript" id="cop"><code class="language-javascript">
+
+</code>
+-------------------------------------------------------------------------------
+
+<button class="copybtn" onclick="copiar('cop', this)">Copiar</button>
+
+-------------------------------------------------------------------------------
+
+<div class="obs">
+
+</div>
